@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook } from "lucide-react";
 import logo from "@/assets/atf-logo.png";
 import { SITE } from "@/lib/site";
 
@@ -44,11 +44,21 @@ const Footer = () => (
         <ul className="space-y-3 text-sm">
           <li className="flex gap-2.5"><Phone className="h-4 w-4 mt-0.5 text-primary-glow shrink-0" /><a href={`tel:${SITE.phoneRaw}`}>{SITE.phone}</a></li>
           <li className="flex gap-2.5"><Mail className="h-4 w-4 mt-0.5 text-primary-glow shrink-0" /><a href={`mailto:${SITE.email}`} className="break-all">{SITE.email}</a></li>
-          <li className="flex gap-2.5"><MapPin className="h-4 w-4 mt-0.5 text-primary-glow shrink-0" /><span>{SITE.address}</span></li>
         </ul>
-        <div className="flex gap-3 mt-4">
-          <a href="#" aria-label="Instagram" className="p-2 rounded-md bg-white/10 hover:bg-primary transition-smooth"><Instagram className="h-4 w-4" /></a>
-          <a href="#" aria-label="Facebook" className="p-2 rounded-md bg-white/10 hover:bg-primary transition-smooth"><Facebook className="h-4 w-4" /></a>
+        <div className="mt-5">
+          <div className="text-xs uppercase tracking-wider text-white/50 mb-3 font-semibold">Follow us</div>
+          <div className="flex gap-3">
+            <a
+              href={SITE.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-gradient-to-br hover:from-[#f09433] hover:via-[#e6683c] hover:to-[#bc1888] hover:text-white transition-all duration-300 text-white/80 text-xs font-medium"
+            >
+              <Instagram className="h-4 w-4" />
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

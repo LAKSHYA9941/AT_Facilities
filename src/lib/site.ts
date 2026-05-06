@@ -4,9 +4,9 @@ export const SITE = {
   email: "atfacilities1999@gmail.com",
   phone: "+91 8130772855",
   phoneRaw: "918130772855",
-  address: "B-37, Kunj Vihar Co-operative Society, Plot No 19, Sector 12, Dwarka, New Delhi -110075",
   url: "https://atfacilities.com",
   founded: "1999",
+  instagram: "https://www.instagram.com/atfacilites1999?igsh=eTd6Y2dmOXhydWQ2",
 };
 
 export const buildWhatsAppUrl = (message: string) =>

@@ -35,13 +35,7 @@ const Index = () => {
     telephone: SITE.phone,
     email: SITE.email,
     url: SITE.url,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "B-37, Kunj Vihar Co-operative Society, Plot No 19, Sector 12",
-      addressLocality: "Dwarka, New Delhi",
-      postalCode: "110075",
-      addressCountry: "IN",
-    },
+    sameAs: [SITE.instagram, SITE.facebook],
     foundingDate: SITE.founded,
     areaServed: ["North India", "Himachal Pradesh", "Uttarakhand", "Kashmir", "Ladakh", "Punjab", "Rajasthan", "Delhi"],
   };

@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
+import { Phone, Mail, MessageCircle, Instagram, Clipboard, Check } from "lucide-react";
 import Seo from "@/components/Seo";
 import InquiryForm from "@/components/InquiryForm";
 import { SITE, buildWhatsAppUrl } from "@/lib/site";
@@ -7,12 +8,44 @@ import { SITE, buildWhatsAppUrl } from "@/lib/site";
 const Contact = () => {
   const [params] = useSearchParams();
   const service = params.get("service") || "";
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyAll = () => {
+    const text = [
+      "AT Facilities — Contact Details",
+      "─────────────────────────────",
+      `📞 Phone:     ${SITE.phone}`,
+      `✉️  Email:     ${SITE.email}`,
+      `📸 Instagram: @atfacilites1999`,
+    ].join("\n");
+
+    // Works on both HTTP (dev) and HTTPS (prod)
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      });
+    } else {
+      // Fallback for HTTP / older browsers
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
+  };
 
   return (
     <>
       <Seo
         title="Contact AT Facilities — Plan Your Next Journey"
-        description={`Call ${SITE.phone}, email ${SITE.email} or send an inquiry. Office in Dwarka, New Delhi. Quotes within 2 hours.`}
+        description={`Call ${SITE.phone}, email ${SITE.email} or send an inquiry. Follow us on Instagram & Facebook. Quotes within 2 hours.`}
         path="/contact"
       />
 
@@ -68,41 +101,45 @@ const Contact = () => {
             </a>
             <div className="bg-card border border-border rounded-2xl p-5">
               <div className="flex gap-4">
-                <div className="h-11 w-11 rounded-xl bg-navy flex items-center justify-center text-white shrink-0"><MapPin className="h-5 w-5" /></div>
+                <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888] flex items-center justify-center text-white shrink-0"><Instagram className="h-5 w-5" /></div>
                 <div>
-                  <div className="text-xs uppercase tracking-wider text-secondary font-semibold">Visit us</div>
-                  <div className="font-semibold text-navy mt-0.5 leading-snug">B-37, Kunj Vihar Co-operative Society</div>
-                  <div className="text-sm text-muted-foreground">Plot No 19, Sector 12, Dwarka,<br />New Delhi - 110075</div>
+                  <div className="text-xs uppercase tracking-wider text-secondary font-semibold">Follow on Instagram</div>
+                  <a
+                    href={SITE.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-navy mt-0.5 text-sm hover:text-primary transition-smooth block"
+                  >
+                    @atfacilites1999
+                  </a>
+                  <div className="text-xs text-muted-foreground mt-0.5">Travel stories &amp; trip reels</div>
                 </div>
               </div>
             </div>
-            <div className="bg-navy text-white rounded-2xl p-5">
-              <div className="flex gap-3">
-                <Clock className="h-5 w-5 text-primary-glow mt-0.5" />
-                <div className="text-sm">
-                  <div className="font-semibold">Quote within 2 hours</div>
-                  <div className="text-white/70 text-xs mt-1">During business hours, every day.</div>
-                </div>
-              </div>
-            </div>
+            <button
+              onClick={handleCopyAll}
+              className={`w-full flex items-center justify-center gap-2.5 rounded-2xl p-4 text-sm font-semibold border
+                transition-all duration-200 select-none
+                active:scale-95 active:shadow-inner
+                ${
+                  copied
+                    ? "bg-green-50 border-green-300 text-green-700 scale-95"
+                    : "bg-card border-border text-navy hover:border-primary/50 hover:shadow-elegant"
+                }`}
+            >
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 text-green-600 shrink-0" />
+                  ✅ Copied to clipboard!
+                </>
+              ) : (
+                <>
+                  <Clipboard className="h-4 w-4 shrink-0" />
+                  Copy all contact details
+                </>
+              )}
+            </button>
           </aside>
-        </div>
-      </section>
-
-      <section className="pb-24">
-        <div className="container-x">
-          <div className="rounded-3xl overflow-hidden border border-border shadow-soft aspect-[16/8]">
-            <iframe
-              title="AT Facilities office location"
-              src="https://www.google.com/maps?q=Sector+12+Dwarka+New+Delhi+110075&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
         </div>
       </section>
     </>
