@@ -122,3 +122,11 @@
   .shadow-warm { box-shadow: var(--shadow-warm); }
   .transition-smooth { transition: all 0.3s var(--transition-smooth); }
 }
+
+/* Subtle smoothing on all content images (JPG/PNG) — excludes SVG icons & logos */
+img[src$=".jpg"],
+img[src$=".jpeg"],
+img[src$=".png"] {
+  filter: blur(0.4px);
+  image-rendering: auto;
+}

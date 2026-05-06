@@ -2,6 +2,25 @@ import himalayas from "@/assets/dest-himalayas.jpg";
 import spiritual from "@/assets/dest-spiritual.jpg";
 import heritage from "@/assets/dest-heritage.jpg";
 import honeymoon from "@/assets/dest-honeymoon.jpg";
+import shimla from "@/assets/shimla.jpg"
+import manali from "@/assets/manali.jpg"
+import leh_ladakh from "@/assets/leh-ladakh.jpg"
+import kashmir from "@/assets/kashmir.jpg"
+import spiti_valley from "@/assets/spiti_valley.jpg"
+import haridwar from "@/assets/haridwar.jpg"
+import rishikesh from "@/assets/rishikesh.jpg"
+import vaishno_devi from "@/assets/vaishno_devi.jpg"
+import char_dham from "@/assets/char-dham.png"
+import amritsar from "@/assets/amritsar.jpg"
+import delhi from "@/assets/delhi.jpg"
+import agra from "@/assets/agra.jpg"
+import jaipur from "@/assets/jaipur.jpg"
+import udaipur from "@/assets/udaipur.jpg"
+import jodhpur from "@/assets/jodhpur.jpg"
+import manali_honeymoon from "@/assets/manali-romance.jpg"
+import manali_shimla_combo from "@/assets/manali_shimla_combo.png"
+import nainital from "@/assets/nainital.jpg"
+import kashmir_honeymoon from "@/assets/kashmir_romance.jpg"
 
 export type Category = "himalayas" | "spiritual" | "heritage" | "honeymoon";
 
@@ -30,100 +49,100 @@ export const destinations: Destination[] = [
     tagline: "Snow, pine & adventure",
     description: "Wake up to deodar forests, drift down the Beas and chase snow at Solang & Rohtang.",
     highlights: ["Solang Valley snow sports", "Old Manali cafés", "Hadimba Temple", "Rohtang Pass excursion"],
-    bestTime: "Oct – Mar (snow), Apr – Jun (pleasant)", duration: "5N / 6D", image: honeymoon },
+    bestTime: "Oct – Mar (snow), Apr – Jun (pleasant)", duration: "5N / 6D", image: manali },
   { slug: "shimla", name: "Shimla", category: "himalayas", state: "Himachal Pradesh",
     tagline: "Queen of the hills",
     description: "Colonial charm meets Himalayan vistas on the historic Mall Road.",
     highlights: ["Mall Road & Ridge", "Toy train ride", "Kufri day trip", "Jakhu Temple"],
-    bestTime: "Mar – Jun, Dec – Feb", duration: "4N / 5D", image: honeymoon },
+    bestTime: "Mar – Jun, Dec – Feb", duration: "4N / 5D", image: shimla },
   { slug: "leh-ladakh", name: "Leh-Ladakh", category: "himalayas", state: "Ladakh",
     tagline: "Land of high passes",
     description: "Moonlit monasteries, turquoise Pangong and the world's highest motorable roads.",
     highlights: ["Pangong Tso", "Nubra Valley & Hunder dunes", "Khardung La pass", "Thiksey Monastery"],
-    bestTime: "May – September", duration: "7N / 8D", image: himalayas },
+    bestTime: "May – September", duration: "7N / 8D", image: leh_ladakh },
   { slug: "spiti", name: "Spiti Valley", category: "himalayas", state: "Himachal Pradesh",
     tagline: "Middle land of monks",
     description: "Stark, surreal Himalayan desert dotted with thousand-year-old gompas.",
     highlights: ["Key Monastery", "Chandratal lake", "Langza fossils", "Chicham bridge"],
-    bestTime: "Jun – October", duration: "7N / 8D", image: himalayas },
+    bestTime: "Jun – October", duration: "7N / 8D", image: spiti_valley },
   { slug: "kashmir", name: "Kashmir", category: "himalayas", state: "Jammu & Kashmir",
     tagline: "Paradise on earth",
     description: "Shikara rides on Dal, tulip gardens and the silver slopes of Gulmarg.",
     highlights: ["Dal Lake houseboat", "Gulmarg Gondola", "Pahalgam meadows", "Sonmarg glaciers"],
-    bestTime: "Mar – Oct (snow Dec – Feb)", duration: "6N / 7D", image: honeymoon },
+    bestTime: "Mar – Oct (snow Dec – Feb)", duration: "6N / 7D", image: kashmir },
 
   { slug: "haridwar", name: "Haridwar", category: "spiritual", state: "Uttarakhand",
     tagline: "Gateway to the gods",
     description: "Witness the timeless Ganga aarti at Har Ki Pauri.",
     highlights: ["Har Ki Pauri aarti", "Mansa Devi temple", "Chandi Devi ropeway"],
-    bestTime: "Year round", duration: "2N / 3D", image: spiritual },
+    bestTime: "Year round", duration: "2N / 3D", image: haridwar },
   { slug: "rishikesh", name: "Rishikesh", category: "spiritual", state: "Uttarakhand",
     tagline: "Yoga capital of the world",
     description: "The holy Ganges, suspension bridges and soulful river-side ashrams.",
     highlights: ["Triveni Ghat aarti", "Lakshman Jhula", "Beatles Ashram", "River rafting"],
-    bestTime: "Sep – May", duration: "3N / 4D", image: spiritual },
+    bestTime: "Sep – May", duration: "3N / 4D", image: rishikesh },
   { slug: "vaishno-devi", name: "Vaishno Devi", category: "spiritual", state: "Jammu & Kashmir",
     tagline: "Climb to Mata's darshan",
     description: "A sacred trek through the Trikuta hills to the holy cave shrine.",
     highlights: ["Bhawan darshan", "Bhairon Temple", "Helicopter option"],
-    bestTime: "Mar – Oct", duration: "2N / 3D", image: spiritual },
+    bestTime: "Mar – Oct", duration: "2N / 3D", image: vaishno_devi },
   { slug: "amritsar", name: "Amritsar", category: "spiritual", state: "Punjab",
     tagline: "City of the Golden Temple",
     description: "The Harmandir Sahib, langar seva and the stirring Wagah border ceremony.",
     highlights: ["Golden Temple", "Jallianwala Bagh", "Wagah border parade", "Punjabi food trail"],
-    bestTime: "Oct – Mar", duration: "2N / 3D", image: spiritual },
+    bestTime: "Oct – Mar", duration: "2N / 3D", image: amritsar },
   { slug: "char-dham", name: "Char Dham Yatra", category: "spiritual", state: "Uttarakhand",
     tagline: "The four sacred abodes",
     description: "Yamunotri, Gangotri, Kedarnath and Badrinath — a once-in-a-lifetime pilgrimage.",
     highlights: ["Kedarnath darshan", "Badrinath temple", "Gangotri glacier route", "Helicopter packages"],
-    bestTime: "May – June, Sep – Oct", duration: "10N / 11D", image: spiritual },
+    bestTime: "May – June, Sep – Oct", duration: "10N / 11D", image: char_dham },
 
   { slug: "delhi", name: "Delhi", category: "heritage", state: "Delhi",
     tagline: "Where centuries collide",
     description: "Mughal monuments, colonial avenues and bustling bazaars.",
     highlights: ["Red Fort & Jama Masjid", "Qutub Minar", "India Gate", "Chandni Chowk food walk"],
-    bestTime: "Oct – Mar", duration: "3N / 4D", image: heritage },
+    bestTime: "Oct – Mar", duration: "3N / 4D", image: delhi },
   { slug: "agra", name: "Agra", category: "heritage", state: "Uttar Pradesh",
     tagline: "Home of eternal love",
     description: "The Taj Mahal at sunrise — a sight that lives up to every legend.",
     highlights: ["Taj Mahal sunrise", "Agra Fort", "Mehtab Bagh", "Fatehpur Sikri"],
-    bestTime: "Oct – Mar", duration: "1N / 2D", image: heritage },
+    bestTime: "Oct – Mar", duration: "1N / 2D", image: agra },
   { slug: "jaipur", name: "Jaipur", category: "heritage", state: "Rajasthan",
     tagline: "The pink city",
     description: "Palaces, observatories and the regal Amer Fort in royal Rajasthan.",
     highlights: ["Amer Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
-    bestTime: "Oct – Mar", duration: "3N / 4D", image: heritage },
+    bestTime: "Oct – Mar", duration: "3N / 4D", image: jaipur },
   { slug: "udaipur", name: "Udaipur", category: "heritage", state: "Rajasthan",
     tagline: "Venice of the east",
     description: "Lake palaces, marble courtyards and golden-hour boat rides on Pichola.",
     highlights: ["Lake Pichola boat", "City Palace", "Jagdish Temple", "Sajjangarh sunset"],
-    bestTime: "Sep – Mar", duration: "3N / 4D", image: heritage },
+    bestTime: "Sep – Mar", duration: "3N / 4D", image: udaipur },
   { slug: "jodhpur", name: "Jodhpur", category: "heritage", state: "Rajasthan",
     tagline: "The blue city",
     description: "Mehrangarh towers above a sea of indigo houses and timeless havelis.",
     highlights: ["Mehrangarh Fort", "Jaswant Thada", "Clock Tower bazaar", "Desert excursions"],
-    bestTime: "Oct – Mar", duration: "2N / 3D", image: heritage },
+    bestTime: "Oct – Mar", duration: "2N / 3D", image: jodhpur },
 
   { slug: "manali-honeymoon", name: "Manali Honeymoon", category: "honeymoon", state: "Himachal Pradesh",
     tagline: "Snow-kissed romance",
     description: "Cozy cottages, candle-lit dinners and snow walks for two.",
     highlights: ["Private cab", "Candle-lit dinner", "Snow point excursion", "Couple spa"],
-    bestTime: "Year round", duration: "5N / 6D", image: honeymoon },
+    bestTime: "Year round", duration: "5N / 6D", image: manali_honeymoon },
   { slug: "shimla-honeymoon", name: "Shimla & Manali Combo", category: "honeymoon", state: "Himachal Pradesh",
     tagline: "Two hill towns, one love story",
     description: "Colonial Shimla and dreamy Manali combined into one unforgettable escape.",
     highlights: ["Mall Road strolls", "Kufri day", "Solang adventure", "Hot-cocoa nights"],
-    bestTime: "Year round", duration: "6N / 7D", image: honeymoon },
+    bestTime: "Year round", duration: "6N / 7D", image: manali_shimla_combo },
   { slug: "nainital-honeymoon", name: "Nainital", category: "honeymoon", state: "Uttarakhand",
     tagline: "By the emerald lake",
     description: "Boat rides, ropeways and soft mountain mornings in the Kumaon hills.",
     highlights: ["Naini Lake boating", "Snow View ropeway", "Tiffin Top trek", "Mall Road"],
-    bestTime: "Mar – Jun, Sep – Nov", duration: "4N / 5D", image: honeymoon },
+    bestTime: "Mar – Jun, Sep – Nov", duration: "4N / 5D", image: nainital },
   { slug: "kashmir-honeymoon", name: "Kashmir Honeymoon", category: "honeymoon", state: "Jammu & Kashmir",
     tagline: "Houseboats & shikaras",
     description: "Float on Dal Lake, glide up Gulmarg and lose yourselves in the valley.",
     highlights: ["Deluxe houseboat", "Shikara ride", "Gulmarg gondola", "Pahalgam day"],
-    bestTime: "Mar – Oct", duration: "6N / 7D", image: honeymoon },
+    bestTime: "Mar – Oct", duration: "6N / 7D", image: kashmir_honeymoon },
 ];
 
 export const getDestination = (slug: string) => destinations.find(d => d.slug === slug);

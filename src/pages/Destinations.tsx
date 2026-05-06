@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, MapPin, Clock } from "lucide-react";
 import Seo from "@/components/Seo";
@@ -13,6 +13,48 @@ const filters: { id: Filter; label: string }[] = [
   { id: "heritage", label: "Heritage" },
   { id: "honeymoon", label: "Honeymoon" },
 ];
+
+/* ─── Lazy image with shimmer skeleton + fade-in ─── */
+const LazyImage = ({ src, alt }: { src: string; alt: string }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { rootMargin: "200px" }   // start loading 200px before it enters viewport
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="h-full w-full relative">
+      {/* Shimmer skeleton — visible until image loads */}
+      <div
+        className={cn(
+          "absolute inset-0 bg-gradient-to-r from-muted via-muted/60 to-muted animate-pulse transition-opacity duration-500",
+          loaded ? "opacity-0 pointer-events-none" : "opacity-100"
+        )}
+      />
+      {/* Actual image — fades in once loaded */}
+      {inView && (
+        <img
+          src={src}
+          alt={alt}
+          onLoad={() => setLoaded(true)}
+          className={cn(
+            "h-full w-full object-cover group-hover:scale-110 transition-all duration-700",
+            loaded ? "opacity-100 blur-0" : "opacity-0 blur-sm"
+          )}
+        />
+      )}
+    </div>
+  );
+};
 
 const Destinations = () => {
   const [params, setParams] = useSearchParams();
@@ -76,7 +118,7 @@ const Destinations = () => {
                 className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-elegant hover:-translate-y-1 transition-smooth"
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={d.image} alt={d.name} loading="lazy" className="h-full w-full object-cover group-hover:scale-110 transition-smooth duration-700" />
+                  <LazyImage src={d.image} alt={d.name} />
                 </div>
                 <div className="p-5">
                   <div className="text-xs uppercase tracking-wider text-secondary font-semibold">{categoryMeta[d.category].label}</div>

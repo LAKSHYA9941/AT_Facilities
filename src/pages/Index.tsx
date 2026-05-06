@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 import { destinations, categoryMeta } from "@/data/destinations";
 import { posts } from "@/data/blog";
 import { SITE } from "@/lib/site";
+import manali_market from "@/assets/manali_market.jpg"
+import vishnu_stambh from "@/assets/vishnu_stambh.jpg"
+import kufri from "@/assets/kufri.jpg"
+import kedar from "@/assets/shri_kedar.jpg"
 
 const services = [
   { icon: BedDouble, title: "Hotel Reservation", desc: "National & international stays — from heritage havelis to luxury resorts." },
@@ -35,7 +39,7 @@ const Index = () => {
     telephone: SITE.phone,
     email: SITE.email,
     url: SITE.url,
-    sameAs: [SITE.instagram, SITE.facebook],
+    sameAs: [SITE.instagram],
     foundingDate: SITE.founded,
     areaServed: ["North India", "Himachal Pradesh", "Uttarakhand", "Kashmir", "Ladakh", "Punjab", "Rajasthan", "Delhi"],
   };
@@ -139,16 +143,16 @@ const Index = () => {
 
           <div className="grid grid-cols-3 gap-3">
             <div className="col-span-2 rounded-2xl overflow-hidden aspect-[4/3]">
-              <img src={categoryMeta.himalayas.image} alt="Himalayas" loading="lazy" className="h-full w-full object-cover" />
+              <img src={manali_market} alt="Himalayas" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={categoryMeta.spiritual.image} alt="Spiritual" loading="lazy" className="h-full w-full object-cover" />
+              <img src={vishnu_stambh} alt="Spiritual" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={categoryMeta.honeymoon.image} alt="Honeymoon" loading="lazy" className="h-full w-full object-cover" />
+              <img src={kufri} alt="Honeymoon" loading="lazy" className="h-full w-full object-cover" />
             </div>
             <div className="col-span-2 rounded-2xl overflow-hidden">
-              <img src={categoryMeta.heritage.image} alt="Heritage" loading="lazy" className="h-full w-full object-cover" />
+              <img src={kedar} alt="Heritage" loading="lazy" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
