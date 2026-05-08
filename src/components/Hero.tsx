@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hero from "@/assets/hero-himalayas.jpg";
+import hero from "@/assets/avifs/hero-himalayas_converted.avif";
 import { SITE } from "@/lib/site";
 
 const Hero = () => (

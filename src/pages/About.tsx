@@ -1,8 +1,8 @@
 import { Award, Users, Map, Heart } from "lucide-react";
 import Seo from "@/components/Seo";
-import logo from "@/assets/atf-logo.png";
-import himalayas from "@/assets/dest-himalayas.jpg";
-import heritage from "@/assets/dest-heritage.jpg";
+import logo from "@/assets/avifs/atf-logo_converted.avif";
+import himalayas from "@/assets/avifs/dest-himalayas_converted.avif";
+import heritage from "@/assets/avifs/dest-heritage_converted.avif";
 
 const stats = [
   { icon: Award, value: "26+", label: "Years of trust" },

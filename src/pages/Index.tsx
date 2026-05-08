@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import { destinations, categoryMeta } from "@/data/destinations";
 import { posts } from "@/data/blog";
 import { SITE } from "@/lib/site";
-import manali_market from "@/assets/manali_market.jpg"
-import vishnu_stambh from "@/assets/vishnu_stambh.jpg"
-import kufri from "@/assets/kufri.jpg"
-import kedar from "@/assets/shri_kedar.jpg"
+import manali_market from "@/assets/avifs/manali_market_converted.avif"
+import vishnu_stambh from "@/assets/avifs/vishnu_stambh_converted.avif"
+import kufri from "@/assets/avifs/kufri_converted.avif"
+import kedar from "@/assets/avifs/shri_kedar_converted.avif"
 
 const services = [
   { icon: BedDouble, title: "Hotel Reservation", desc: "National & international stays — from heritage havelis to luxury resorts." },

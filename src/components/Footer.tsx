@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Instagram, Facebook } from "lucide-react";
-import logo from "@/assets/atf-logo.png";
+import logo from "@/assets/avifs/atf-logo_converted.avif";
 import { SITE } from "@/lib/site";
 
 const Footer = () => (

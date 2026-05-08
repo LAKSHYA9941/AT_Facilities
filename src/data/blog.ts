@@ -1,8 +1,8 @@
-import leh_ladakh from "@/assets/leh-ladakh.jpg";
-import rishikesh from "@/assets/rishikesh.jpg"
-import haridwar from "@/assets/haridwar.jpg"
-import manalroma from "@/assets/manali-romance.jpg"
-import golden from "@/assets/amritsar.jpg"
+import leh_ladakh from "@/assets/avifs/leh-ladakh_converted.avif";
+import rishikesh from "@/assets/avifs/rishikesh_converted.avif"
+import haridwar from "@/assets/avifs/haridwar_converted.avif"
+import manalroma from "@/assets/avifs/manali-romance_converted.avif"
+import golden from "@/assets/avifs/amritsar_converted.avif"
 
 export interface BlogPost {
   slug: string;
